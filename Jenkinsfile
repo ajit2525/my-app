@@ -12,6 +12,13 @@ node{
       Thanks
       Ajit''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'ajiteee2394@gmail.com'
    }
+   stage('SonarQube Analysis') {
+        def mvnHome =  tool name: 'Maven', type: 'maven'
+        withSonarQubeEnv('sonarqube') { 
+          sh 'mvn sonar:sonar \
+           
+        }
+   }
 }
 
 
